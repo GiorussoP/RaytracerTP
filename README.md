@@ -20,7 +20,7 @@ A implementação permite aninhamento recursivo de operações CSG.
 
 ### Materiais e Iluminação
 *   **Modelo de Phong**: Componentes ambiente, difusa e especular.
-*   **Reflexão**: Reflexão recursiva perfeita.
+*   **Reflexão**: Reflexão recursiva perfeita e imperfeita.
 *   **Refração**: Transparência com Índice de Refração (IOR) usando a Lei de Snell.
 *   **Pigmentos**:
     *   Sólido (Cor única).
@@ -41,7 +41,7 @@ O projeto foi desenvolvido em **C++17**. Abaixo estão os principais detalhes t�
 ### 1. Algoritmo de Ray Tracing
 O núcleo do renderizador utiliza o algoritmo de **Ray Tracing Recursivo**. O processo para cada pixel segue os passos:
 1.  **Geração de Raios**: Raios primários são lançados da câmera em direção à cena.
-2.  **Interseção**: O raio é testado contra todos os objetos da cena para encontrar a interseção mais próxima.
+2.  **Interseção**: Os raios são testados contra todos os objetos da cena para encontrar a interseção mais próxima.
 3.  **Shading (Sombreamento)**:
     *   **Local**: Calcula-se a iluminação direta usando o modelo de Phong (ambiente + difusa + especular), verificando a visibilidade das luzes (sombras).
     *   **Global (Recursivo)**: Se o material for reflexivo ou transparente, novos raios secundários são gerados e o processo se repete até atingir uma profundidade máxima de recursão.
@@ -52,6 +52,8 @@ Para alcançar maior realismo e resolver problemas de aliasing, o sistema implem
 *   Cada raio sofre um pequeno deslocamento aleatório (`jitter`) dentro da área do pixel.
 *   Isso permite:
     *   **Anti-aliasing**: Suavização de bordas serrilhadas.
+    *   **Soft Shadows**: Sombras suaves geradas por luzes de área, onde a posição da luz é amostrada aleatoriamente, criando penumbras realistas em vez de sombras duras.
+    *   **Reflexões e Refrações Imperfeitas**: A amostragem aleatória introduz variações nas direções dos raios refletidos e refratados, simulando superfícies irregulares ou materiais imperfeitos, resultando em efeitos mais naturais do que reflexões/refrações perfeitas do raytracing básico.
     *   **Depth of Field**: Ao variar a origem do raio sobre um disco (abertura da lente) e focar em um plano específico, simula-se o desfoque de objetos fora de foco.
 
 ### 3. Geometria Sólida Construtiva (CSG)
