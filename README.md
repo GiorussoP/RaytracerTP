@@ -32,7 +32,7 @@ O renderizador utiliza superamostragem estocástica (Stratified Sampling/Jitteri
 *   **Anti-aliasing**: Suavização de bordas.
 *   **Soft Shadows**: Sombras suaves geradas por luzes de área (amostragem aleatória na fonte de luz).
 * **Refrações e Reflexões Imperfeitas** A amostragem aleatória também gera reflexões e refrações imperfeitas, mais realistas do que as do raytracing puro.
-### Depth of Field (DOF)**: Simulação de profundidade de campo com abertura de lente e distância focal ajustáveis.
+* **Depth of Field (DOF)**: Simulação de profundidade de campo com abertura de lente e distância focal ajustáveis.
 
 ## Implementação
 
