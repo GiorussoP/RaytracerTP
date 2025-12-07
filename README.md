@@ -1,6 +1,6 @@
 # Ray Tracer - Computação Gráfica (TP2)
 
-Este projeto implementa um Ray Tracer avançado em C++17, desenvolvido como parte da disciplina de Computação Gráfica. O renderizador suporta diversas primitivas geométricas, materiais complexos, raytracing distribuído (Distributed Ray Tracing) e Geometria Sólida Construtiva (CSG).
+Este projeto implementa um Ray Tracer distribuído em C++17, desenvolvido como parte da disciplina de Computação Gráfica. O renderizador suporta diversas primitivas geométricas, materiais diferentes e Geometria Sólida Construtiva (CSG).
 
 ![Meu Teste](results/meuteste.png)
 
